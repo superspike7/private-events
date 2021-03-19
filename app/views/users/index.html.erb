@@ -1,0 +1,9 @@
+<h1> Users: </h1>
+
+<% @users.each do |user| %> 
+  <div class="card">
+    <%= user.id %>  <br>
+    <%= user.name %> <br>
+  </div>
+
+<% end %>
