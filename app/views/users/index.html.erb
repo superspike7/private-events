@@ -7,6 +7,15 @@
       <div class="font-bold text-xl mb-2">User: <%= user.id %></div>
       <p class="text-grey-darker text-base">
         name: <%= user.name %> <br>
+        Events: <br>
+        <div>
+          <% user.created_events.each do |e| %>
+          id: <%= e.id %> <br>
+           name: <%= e.name %> <br>
+           place: <%= e.location %> <br>
+           date: <%= e.created_at %>
+          <% end %>
+        </div>
       </p>
     </div>
     <div class="px-6 pt-4 pb-2">

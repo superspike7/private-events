@@ -1,0 +1,18 @@
+<div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
+
+<% @events.each do |e| %> 
+
+  <div class="max-w-xs rounded overflow-hidden shadow-lg my-2">
+    <div class="px-6 py-4">
+      <div class="font-bold text-xl mb-2">Event: <%= e.id %></div>
+      <p class="text-grey-darker text-base">
+      <i>NAME: </i> <%= e.name %> <br>
+      <i>LOCATION: </i> <%= e.location %> <br>
+      <i>CREATOR: </i> <%= e.creator.name %>  <br>
+      </p>
+    </div>
+  </div>
+
+<% end %>
+
+</div>
