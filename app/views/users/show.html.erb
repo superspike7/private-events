@@ -1,4 +1,14 @@
 <h1>User:</h1>
 
-<%= @user.name %>
-<%= @user.username %>
+name: <%= @user.name %> <br>
+username: <%= @user.username %> <br>
+<p>upcoming events:</p>
+<div> <% @user.attended_events.upcoming.each do |a| %>
+ <li>- <%= a.name %> </li>
+<% end %>
+</div>
+<p>past events:</p>
+<div> <% @user.attended_events.past.each do |a| %>
+ <li>- <%= a.name %> </li>
+<% end %>
+</div>

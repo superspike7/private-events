@@ -3,3 +3,12 @@
 <p>Name: <%= @event.name %> </p>
 <p>Location: <%= @event.location %></p>
 <p>Creator: <%= @event.creator.name %></p>
+<p>Attendees: </p>
+
+<% @event.attendees.each do |attendee| %> 
+
+<ul>
+  <li>- <%= attendee.name %>  </li>
+</ul>
+
+<% end %>
