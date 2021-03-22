@@ -1,6 +1,6 @@
-<div class="grid grid-cols-2 gap-2 overflow-hidden">
+<div class="my-10 mx-6 grid grid-cols-2 gap-6 auto-rows-auto grid-flow-col overflow-hidden">
 
-  <div class="overflow-hidden">
+  <div class="bg-gray-50 shadow-xl overflow-hidden ">
     <h1 class="text-center" >Upcoming Events</h1>
 
     <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
@@ -11,8 +11,9 @@
             <div class="font-bold text-xl mb-2">Event: <%= e.id %></div>
             <p class="text-grey-darker text-base">
             <i>NAME: </i> <%= e.name %> <br>
-            <i>LOCATION: </i> <%= e.location %> <br>upcoming
+            <i>LOCATION: </i> <%= e.location %> <br>
             <i>CREATOR: </i> <%= e.creator.name %>  <br>
+            <i>SCHEDULE: </i> <%= e.schedule %>  <br>
             </p>
           </div>
           <div class="px-6 pt-4 pb-2">
@@ -26,7 +27,7 @@
     </div>
   </div>
 
-  <div class="overflow-hidden">
+  <div class="bg-gray-50 shadow-xl overflow-hidden">
     <h1 class="text-center" >Past Events</h1>
 
     <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
@@ -39,6 +40,7 @@
             <i>NAME: </i> <%= e.name %> <br>
             <i>LOCATION: </i> <%= e.location %> <br>
             <i>CREATOR: </i> <%= e.creator.name %>  <br>
+            <i>SCHEDULE: </i> <%= e.schedule %>  <br>
             </p>
           </div>
           <div class="px-6 pt-4 pb-2">

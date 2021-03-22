@@ -22,10 +22,11 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+
   private
 
   def user_params
-    params.require(:event).permit(:name, :location)
+    params.require(:event).permit(:name, :location, :schedule)
   end
 
 
