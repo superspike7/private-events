@@ -6,13 +6,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "inter-font", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag "application", "data-turbo-track": "reload" %>
   </head>
 
   <body>
+  <%= render "shared/nav" %>
   <!-- 
   <nav class="font-sans flex flex-col text-center sm:flex-row sm:text-left sm:justify-between py-4 px-6 bg-white shadow sm:items-baseline w-full">
     <div class="mb-2 sm:mb-0">
@@ -33,7 +33,6 @@
   </nav>
   -->
 
-  <h1 class="text-red-500 text-3xl">tailwind testing</h1>
     <%= yield %>
   </body>
 </html>
