@@ -1,5 +1,10 @@
 <div class="py-20 h-screen bg-gray-300 px-2">
     <div class="max-w-md mx-auto bg-white rounded-lg overflow-hidden md:max-w-md">
+    <% flash.each do |type, msg|%>
+      <h1 class="text-center p-1 text-lg font-light text-red-500"> 
+        <%= msg %>
+      </h1>
+    <% end %>
         <div class="md:flex">
             <div class="w-full p-3 px-6 py-10">
               <%= form_tag sessions_path do %>

@@ -4,20 +4,20 @@
 
   <div class="max-w-xs rounded overflow-hidden shadow-lg my-2">
     <div class="px-6 py-4">
-      <div class="font-bold text-xl mb-2">User: <%= user.id %></div>
-      <p class="text-grey-darker text-base">
-        name: <%= user.name %> <br>
-        Created events: <br>
-        <div>
-          <% user.created_events.each do |e| %>
-           -- <%= e.name %> <br>
-          <% end %>
-        </div>
+    <h1 class="text-xl font-semibold text-gray-900 text-center my-2">
+        <%= user.name %> <br>
+    </h1>
+    <h3 class="text-lg font-light text-gray-800 my-2">
+        Created events: 
+    </h3>
+    <ul class="list-disc">
+      <% user.created_events.each do |event| %>
+        <li><%= link_to event.name, events_path(event), class: "text-blue-400 underline hover:text-blue-700 "%> </li>
+      <% end %>
+    </ul>
       </p>
     </div>
     <div class="px-6 pt-4 pb-2">
-      <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"><%= link_to "Show", user %></span>
-      <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"><%= link_to "Delete", user, method: :delete, data: { confirm: "Are you sure?" } %></span>
     </div>
   </div>
 
