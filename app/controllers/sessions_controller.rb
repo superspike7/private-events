@@ -6,17 +6,18 @@ class SessionsController < ApplicationController
   def create
       user = User.authenticate(params[:username])
       if user
-      session[:user_id] = user.id
+      # session[:user_id] = user.id
+      log_in user
       redirect_to root_url, :notice => 'logged in!'
     else
-      flash.now.alert = 'user not found'
+      flash.now[:alert] = 'user not found'
       render 'new'
     end
   end
 
 
   def destroy
-    session[:user_id] = nil
+    log_out
     redirect_to root_url, :notice => 'logged out'
   end
 end

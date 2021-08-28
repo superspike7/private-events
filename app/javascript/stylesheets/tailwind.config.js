@@ -6,6 +6,11 @@ module.exports = {
     "./app/helpers/**/*.rb",
     "./app/javascript/**/*.js",
   ],
+  options: {
+    safelist: [
+      /data-theme$/,
+    ]
+  },
   presets: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -856,5 +861,7 @@ module.exports = {
     wordBreak: ['responsive'],
     zIndex: ['responsive', 'focus-within', 'focus'],
   },
-  plugins: [],
+  plugins: [
+    require('daisyui'),
+  ],
 }
