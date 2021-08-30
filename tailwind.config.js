@@ -1,17 +1,19 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
-  // Purge unused TailwindCSS styles
-  purge: {
-    enabled: ["production"].includes(process.env.NODE_ENV),
-    content: [
-      './**/*.html.erb',
-      './app/helpers/**/*.rb',
-      './app/javascript/**/*.js',
-    ],
-  },
-  darkMode: 'media', // or 'media' or 'class'
+  mode: 'jit',
+  purge: [
+    './app/**/*.html.erb',
+    './app/helpers/**/*.rb',
+    './app/assets/javascripts/**/*.js'
+  ],
+  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-            colors: {
+      fontFamily: {
+        sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
+      },
+      colors: {
         red: {
           '50': '#ffebee',
           '100': '#ffcdd2',
@@ -305,10 +307,29 @@ module.exports = {
           900: '#3e2723',
         },
       },
+      spacing: {
+        '7': '1.75rem',
+        '9': '2.25rem',
+        '28': '7rem',
+        '80': '20rem',
+        '96': '24rem',
+      },
+      height: {
+        '1/2': '50%',
+      },
+      scale: {
+        '30': '.3',
+      },
+      boxShadow: {
+        outline: '0 0 0 3px rgba(101, 31, 255, 0.4)',
+      },
     },
   },
   variants: {
-    extend: {},
+    scale: ['responsive', 'hover', 'focus', 'group-hover'],
+    textColor: ['responsive', 'hover', 'focus', 'group-hover'],
+    opacity: ['responsive', 'hover', 'focus', 'group-hover'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'group-hover'],
   },
   plugins: [],
 }
