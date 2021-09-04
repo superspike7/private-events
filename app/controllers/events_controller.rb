@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :require_login, only: [:new, :create]
+  before_action :require_login, only: [:new, :create, :delete]
 
   def new
     @event = current_user.created_events.build
@@ -23,6 +23,12 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy 
+
+    redirect_to root_path :notice => "event deleted"
+  end
 
   private
 
